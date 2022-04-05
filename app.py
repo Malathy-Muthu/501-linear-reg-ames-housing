@@ -34,8 +34,11 @@ app.layout = html.Div(children=[
                 html.Div('Clarity-I1-worst, SI2, SI1, VS2, VS1, VVS2, VVS1, IF-best)'),
                 dcc.Input(id='clarity', value=3, type='number', min=1, max=8, step=1),
                 html.Div('y:width in mm'),
-                dcc.Input(id='y', value=3.0, type='number', min=1.0, max=10.9, step=.1)
-
+                dcc.Input(id='y', value=3.0, type='number', min=1.0, max=10.9, step=.1),
+                html.Div('Predicted Price = (-4472.18 * Baseline) + ($10253.31 * carat) +  (-652.38 * y) + ($111.72 * cut) + ($325.83 * color) + ($519.77 * clarity)'),
+                html.Br(),
+                html.Div('R square = 0.9040'),
+                html.Br()
 
             ], className='four columns'),
             html.Div([
