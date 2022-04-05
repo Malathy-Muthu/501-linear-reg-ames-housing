@@ -58,6 +58,8 @@ app.layout = html.Div(children=[
     html.H4('Regression Equation:'),
     html.Div('Predicted Price = (-4472.18 * Baseline) + ($10253.31 * carat) +  (-652.38 * y) + ($111.72 * cut) + ($325.83 * color) + ($519.77 * clarity)'),
     html.Br(),
+    html.Div('R square = 0.9040'),
+    html.Br(),   
     html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1ktCtc4LMj2AbaLN8J349vXZ7X7M434XfR43h8YRKmzo/edit#gid=0'),
     html.Br(),
     html.A('Code on Github', href=githublink),
@@ -76,7 +78,7 @@ app.layout = html.Div(children=[
     State(component_id='y', component_property='value')
 
 )
-def ames_lr_function(clicks, carat,cut,color,clarity,table,depth,x,y,z):
+def ames_lr_function(clicks,carat,cut,color,clarity,y):
     if clicks==0:
         return "waiting for inputs"
     else:
