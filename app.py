@@ -35,10 +35,17 @@ app.layout = html.Div(children=[
                 dcc.Input(id='clarity', value=3, type='number', min=1, max=8, step=1),
                 html.Div('y:width in mm'),
                 dcc.Input(id='y', value=3.0, type='number', min=1.0, max=10.9, step=.1),
+                html.Br(),
                 html.Div('Predicted Price = (-4472.18 * Baseline) + ($10253.31 * carat) +  (-652.38 * y) + ($111.72 * cut) + ($325.83 * color) + ($519.77 * clarity)',style={'font-family':'verdana','color': '#E41B17', 'fontSize': 25}),
                 html.Br(),
                 html.Div('R square = 0.9040',style={'font-family':'verdana','color': '#E41B17', 'fontSize': 25}),
-                html.Br()
+                html.Br(),
+                html.Br(),
+                html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1ktCtc4LMj2AbaLN8J349vXZ7X7M434XfR43h8YRKmzo/edit#gid=0'),
+                html.Br(),
+                html.A('Code on Github', href=githublink),
+                html.Br(),
+                html.A("Data Source", href=sourceurl)
 
             ], className='four columns'),
             html.Div([
@@ -55,19 +62,8 @@ app.layout = html.Div(children=[
             ], className='four columns')
         ], className='twelve columns',
     ),
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.H4('Regression Equation:'),
-    html.Div('Predicted Price = (-4472.18 * Baseline) + ($10253.31 * carat) +  (-652.38 * y) + ($111.72 * cut) + ($325.83 * color) + ($519.77 * clarity)'),
-    html.Br(),
-    html.Div('R square = 0.9040'),
-    html.Br(),   
-    html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1ktCtc4LMj2AbaLN8J349vXZ7X7M434XfR43h8YRKmzo/edit#gid=0'),
-    html.Br(),
-    html.A('Code on Github', href=githublink),
-    html.Br(),
-    html.A("Data Source", href=sourceurl),
+    html.Br()
+
     ]
 )
 ######### Define Callback
