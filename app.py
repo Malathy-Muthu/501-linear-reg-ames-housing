@@ -9,7 +9,7 @@ myheading1='Diamond Price Prediction (from 54k dataset, 4 Cs - Carat, Cut, Color
 image1='Diamond.png'
 tabtitle = 'Diamond Price Prediction'
 sourceurl = 'https://www.kaggle.com/datasets/shivam2503/diamonds'
-githublink = 'https://github.com/plotly-dash-apps/501-linear-reg-ames-housing'
+githublink = 'https://github.com/Malathy-Muthu/501-linear-reg-ames-housing'
 
 
 ########### Initiate the app
@@ -58,7 +58,7 @@ app.layout = html.Div(children=[
     html.H4('Regression Equation:'),
     html.Div('Predicted Price = (-4472.18 * Baseline) + ($10253.31 * carat) +  (-652.38 * y) + ($111.72 * cut) + ($325.83 * color) + ($519.77 * clarity)'),
     html.Br(),
-    html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1q2ustRvY-GcmPO5NYudvsBEGNs5Na5p_8LMeS4oM35U/edit?usp=sharing'),
+    html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1ktCtc4LMj2AbaLN8J349vXZ7X7M434XfR43h8YRKmzo/edit#gid=0'),
     html.Br(),
     html.A('Code on Github', href=githublink),
     html.Br(),
@@ -73,14 +73,10 @@ app.layout = html.Div(children=[
     State(component_id='cut', component_property='value'),
     State(component_id='color', component_property='value'),
     State(component_id='clarity', component_property='value'),
-    State(component_id='table', component_property='value'),
-    State(component_id='depth', component_property='value'),
-    State(component_id='x', component_property='value'),
-    State(component_id='y', component_property='value'),
-    State(component_id='z', component_property='value'),
+    State(component_id='y', component_property='value')
 
 )
-def diamond_price(clicks, carat,cut,color,clarity,table,depth,x,y,z):
+def ames_lr_function(clicks, carat,cut,color,clarity,table,depth,x,y,z):
     if clicks==0:
         return "waiting for inputs"
     else:
